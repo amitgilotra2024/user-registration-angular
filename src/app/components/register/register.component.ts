@@ -1,15 +1,16 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UserserviceService } from '../../service/userservice.service';
 import { User } from '../../model/user';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RegisterComponent],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, RegisterComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserserviceService,
+    private httpClient: HttpClient
     ) {}
 
 
@@ -41,20 +42,11 @@ export class RegisterComponent implements OnInit {
       user.lastName = this.registerForm.value.lastName;
       user.email = this.registerForm.value.email;
       user.postalCode = this.registerForm.value.postalCode;
-
       if (this.registerForm.valid) {
-        this.userService.addUser(user).subscribe({
-         next: (res: User) => {
-            console.log(res);
-            alert('Registration successful');
-          },
-          error: (err) => {
-            console.log(err);
-            alert('Registration failed');
-          }
-     });
+          const url = `http://localhost:8080/users/addUser`;
+          this.httpClient.post(url, user).subscribe();
+        }
     }
     }
   }
-}
 
