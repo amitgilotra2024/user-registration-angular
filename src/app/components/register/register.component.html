@@ -4,11 +4,7 @@
     <input type="text" id="firstName" class="form-control" formControlName="firstName">
     <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="alert alert-danger">
       <div *ngIf="registerForm.get('firstName')?.errors?.['required']">
-<<<<<<< HEAD
          {{ 'firstname.required' | translate }}
-=======
-         {{ 'firstname.required' }}
->>>>>>> c315bd76ccba7bd6a48f6cb8512d6a5fb8175435
       </div>
     </div>
   </div>
@@ -17,11 +13,7 @@
     <input type="text" id="lastName" class="form-control" formControlName="lastName" >
     <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="alert alert-danger">
       <div *ngIf="registerForm.get('lastName')?.errors?.['required']">
-<<<<<<< HEAD
         {{ 'lastname.required' | translate }}
-=======
-        {{ 'lastname.required' }}
->>>>>>> c315bd76ccba7bd6a48f6cb8512d6a5fb8175435
       </div>
     </div>
   </div>
@@ -30,17 +22,10 @@
     <input type="text" id="email" class="form-control" formControlName="email">
     <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="alert alert-danger">
       <div *ngIf="registerForm.get('email')?.errors?.['required']">
-<<<<<<< HEAD
         {{ 'email.required' | translate }}
       </div>
       <div *ngIf="registerForm.get('email')?.errors?.['email']">
         {{ 'email.invalid' | translate }}
-=======
-        {{ 'email.required' }}
-      </div>
-      <div *ngIf="registerForm.get('email')?.errors?.['email']">
-        {{ 'email.invalid' }}
->>>>>>> c315bd76ccba7bd6a48f6cb8512d6a5fb8175435
       </div>
     </div>
   </div>
@@ -49,7 +34,6 @@
     <input type="text" id="postalCode" class="form-control" formControlName="postalCode">
     <div *ngIf="registerForm.get('postalCode')?.invalid && registerForm.get('postalCode')?.touched" class="alert alert-danger">
       <div *ngIf="registerForm.get('postalCode')?.errors?.['required']">
-<<<<<<< HEAD
         {{ 'postalcode.required' | translate }}
       </div>
       <div *ngIf="registerForm.get('postalCode')?.errors?.['pattern']">
@@ -59,14 +43,4 @@
   </div>
   <div class="form-group">  <button type="submit" class="btn btn-primary">Register</button></div>
   <div class="form-group">  <button type="button" class="btn btn-accent" (click)="changeLanguage()">Change Language</button></div>
-=======
-        {{ 'postalcode.required' }}
-      </div>
-      <div *ngIf="registerForm.get('postalCode')?.errors?.['pattern']">
-        {{ 'postalcode.invalid' }}
-      </div>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Register</button>
->>>>>>> c315bd76ccba7bd6a48f6cb8512d6a5fb8175435
 </form>
