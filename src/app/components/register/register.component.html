@@ -1,45 +1,46 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
+  <div class="form-group col-6">
     <label for="firstName">First Name</label>
-    <input type="text" id="firstName" class="form-control" formControlName="firstName" required>
+    <input type="text" id="firstName" class="form-control" formControlName="firstName">
     <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="alert alert-danger">
       <div *ngIf="registerForm.get('firstName')?.errors?.['required']">
-        First name is required
+         {{ 'firstname.required' | translate }}
       </div>
     </div>
   </div>
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" id="lastName" class="form-control" formControlName="lastName" required>
+    <input type="text" id="lastName" class="form-control" formControlName="lastName" >
     <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="alert alert-danger">
       <div *ngIf="registerForm.get('lastName')?.errors?.['required']">
-        Last name is required
+        {{ 'lastname.required' | translate }}
       </div>
     </div>
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" id="email" class="form-control" formControlName="email" required>
+    <input type="text" id="email" class="form-control" formControlName="email">
     <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="alert alert-danger">
       <div *ngIf="registerForm.get('email')?.errors?.['required']">
-        Email is required
+        {{ 'email.required' | translate }}
       </div>
       <div *ngIf="registerForm.get('email')?.errors?.['email']">
-        Email is invalid
+        {{ 'email.invalid' | translate }}
       </div>
     </div>
   </div>
   <div class="form-group">
     <label for="postalCode">Postal Code</label>
-    <input type="text" id="postalCode" class="form-control" formControlName="postalCode" required>
+    <input type="text" id="postalCode" class="form-control" formControlName="postalCode">
     <div *ngIf="registerForm.get('postalCode')?.invalid && registerForm.get('postalCode')?.touched" class="alert alert-danger">
       <div *ngIf="registerForm.get('postalCode')?.errors?.['required']">
-        Postal code is required
+        {{ 'postalcode.required' | translate }}
       </div>
       <div *ngIf="registerForm.get('postalCode')?.errors?.['pattern']">
-        Postal code is invalid
+        {{ 'postalcode.invalid' | translate }}
       </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+  <div class="form-group">  <button type="submit" class="btn btn-primary">Register</button></div>
+  <div class="form-group">  <button type="button" class="btn btn-accent" (click)="changeLanguage()">Change Language</button></div>
 </form>

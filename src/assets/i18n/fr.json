@@ -1,0 +1,8 @@
+{
+  "firstname.required": "Le prénom est requis",
+  "lastname.required": "Le nom de famille est obligatoire",
+  "email.required": "l'e-mail est requis",
+  "email.invalid": "Le courriel est invalide",
+  "postalcode.required": "le code postal est requis",
+  "postalcode.invalid": "le code postal n'est pas valide"
+}

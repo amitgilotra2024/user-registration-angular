@@ -48,6 +48,18 @@ span.psw {
   padding-top: 16px;
 }
 
+.form-control.ng-dirty, .ng-touched .ng-invalid {
+  border-color: hsl(4, 90%, 58%);
+}
+
+.form-control.ng-dirty, .ng-untouched .ng-invalid {
+  border: 1px solid #ccc;
+}
+
+.alert-danger {
+  color: hsl(4, 90%, 58%);
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {

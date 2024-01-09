@@ -1,0 +1,8 @@
+{
+  "firstname.required": "First name is required",
+  "lastname.required": "Last name is required",
+  "email.required": "email is required",
+  "email.invalid": "email is invalid",
+  "postalcode.required": "postal code is required",
+  "postalcode.invalid": "postal code is invalid"
+}
